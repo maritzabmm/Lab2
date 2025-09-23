@@ -14,8 +14,8 @@ def generate_launch_description():
 
     # Launch configuration variables
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='3.0')  # X position default value
-    y_pose = LaunchConfiguration('y_pose', default='2.0')  # Y position default value
+    x_pose = LaunchConfiguration('x_pose', default='1.0')  # X position default value
+    y_pose = LaunchConfiguration('y_pose', default='-1.0')  # Y position default value
 
     # World file path
     world = os.path.join(pkg_my_world, 'worlds', 'task4World.world') # TODO: fill the name of your custom world
