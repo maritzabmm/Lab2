@@ -12,7 +12,7 @@ class TFRSBroadcaster(Node):
     positioned above the robot with Z and X offsets.
     """
     def __init__(self):
-        super().__init__('tf_rs_broadcaster') #TODO check if this name and the self function must be the same
+        super().__init__('tf_rs_broadcaster')
         self.tf_rs_broadcaster = TransformBroadcaster(self)
         self.timer = self.create_timer(0.01, self.timer_callback)
         self.get_logger().info('Node with scanner started!')
@@ -22,7 +22,7 @@ class TFRSBroadcaster(Node):
         Periodically broadcasts the transform.
         """
         t = self.get_clock().now().seconds_nanoseconds()[0] + \
-            self.get_clock().now().seconds_nanoseconds()[1] / 1e9 #What does this t means?
+            self.get_clock().now().seconds_nanoseconds()[1] / 1e9
 
         # Transform message
         transform_stamped = TransformStamped()
@@ -33,7 +33,7 @@ class TFRSBroadcaster(Node):
         # Oscillation in Y
         amplitude = 0.3 # in meters
         frequency = 1.0 # in Hz
-        y_oscillation = amplitude * math.sin(2 * math.pi * frequency * t) #TODO ver porque esta ecuación
+        y_oscillation = amplitude * math.sin(2 * math.pi * frequency * t) # reviewed with AI
         
         # Set translation for scanner
         x_offset = 0.1 # 10cm forward from robot center
@@ -45,7 +45,7 @@ class TFRSBroadcaster(Node):
         # Set rotation using roll, pitch, and yaw
         roll = 0.0
         pitch = 0.0
-        yaw =-math.atan2(y_oscillation, x_offset) * 0.5  # Explain why this formula
+        yaw =-math.atan2(y_oscillation, x_offset) * 0.5  # reviewed with AI
         q = quaternion_from_euler(roll, pitch, yaw)
 
         transform_stamped.transform.rotation.x = q[0]

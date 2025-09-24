@@ -40,7 +40,7 @@ class TFRLStatic(Node):
         transform_stamped.transform.rotation.x = q[0]
         transform_stamped.transform.rotation.y = q[1]
         transform_stamped.transform.rotation.z = q[2]
-        transform_stamped.transform.rotation.w = q[3] # TODO ver si aqui no es más bien 1.0 y por qué
+        transform_stamped.transform.rotation.w = q[3] 
 
         self.tf_rl_static.sendTransform(transform_stamped)
 

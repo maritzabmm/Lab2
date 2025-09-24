@@ -48,7 +48,7 @@ class TFRRListener(Node):
                 angle_diff = current_angle - self.previous_angle
                 
                 # Handle wraparound (when angle jumps from π to -π or vice versa)
-                #TODO review this explanation with AI
+                # If statements reviewed with AI
                 if angle_diff > math.pi:
                     angle_diff -= 2 * math.pi
                 elif angle_diff < -math.pi:
