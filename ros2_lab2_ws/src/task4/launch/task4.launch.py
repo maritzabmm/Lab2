@@ -72,8 +72,8 @@ def generate_launch_description():
 
     ld = LaunchDescription()
     ld.add_action(DeclareLaunchArgument('use_sim_time', default_value='true', description='Use sim time if true'))
-    ld.add_action(DeclareLaunchArgument('x_pose', default_value='3', description='Initial x position of the robot')) # TODO: choose spawn position
-    ld.add_action(DeclareLaunchArgument('y_pose', default_value='2', description='Initial y position of the robot')) # TODO: choose spawn position
+    ld.add_action(DeclareLaunchArgument('x_pose', default_value='1', description='Initial x position of the robot')) # TODO: choose spawn position
+    ld.add_action(DeclareLaunchArgument('y_pose', default_value='-1', description='Initial y position of the robot')) # TODO: choose spawn position
 
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
